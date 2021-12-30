@@ -28,7 +28,7 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 http
                 .authorizeRequests()
                 .antMatchers("/","index","/css/*","/js/*").permitAll()
-                .antMatchers("/api/**").hasRole(ApplicationUserRole.STUDENT.name())
+                .antMatchers("/api/**").hasRole(ApplicationUserRole.STUDENT.name()) //Role based authentication
                 .anyRequest()
                 .authenticated()
                 .and()
